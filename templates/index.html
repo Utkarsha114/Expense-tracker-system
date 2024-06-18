@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <div class="form-container">
+            <form id="expense-form">
+                <input type="text" id="expense-name" placeholder="Expense Name" required>
+                <input type="number" id="expense-amount" placeholder="Amount" required>
+                <input type="text" id="expense-category" placeholder="Category" required>
+                <input type="date" id="expense-date">
+                <button type="submit">Add Expense</button>
+            </form>
+        </div>
+        <div class="expenses">
+            <table id="expenses-table">
+                <thead>
+                    <tr>
+                        <th>Expense Name</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Expenses will be dynamically added here -->
+                </tbody>
+            </table>
+        </div>
+        <div class="total">
+            <h2>Total: $<span id="total-amount">0.00</span></h2>
+        </div>
+        <div class="analysis">
+            <h2>Spending Analysis by Category</h2>
+            <ul id="analysis-list">
+                <!-- Analysis will be dynamically added here -->
+            </ul>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
